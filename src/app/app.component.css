@@ -1,0 +1,28 @@
+    .clicker {
+    outline:none;
+    cursor:pointer;
+    height: 40px;
+    }
+    
+    .hiddendiv{
+    display:none;
+    height:200px;
+    width: 500px;
+    background-color: azure;
+    padding: 25px;
+    margin: 20px;
+    }
+    
+
+    .clicker:focus + .hiddendiv{
+        display:block;
+    }
+
+    table{
+        margin: 20px;
+    }
+
+    h1{
+        margin: 10px;
+        padding: 10px;
+    }

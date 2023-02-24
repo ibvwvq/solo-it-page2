@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="app.compoent.js"></script>
+</head>
+<body>
+  <tui-root style="padding: 10px; margin: 10px;">
+    <h1>Последние отчеты с Bizon 365</h1>
+    <label style="margin: 10px; padding: 10px;">Все отчеты с Bizon, которые есть. Можно выгрузить старые отчеты, если их нет в базе. Или перезагрузить, если вам нужно повторно выгрузить отчет</label>
+    <table tuiTable class="table" [columns]="columns">
+      <thead>
+        <tr tuiThGroup>
+          <th tuiTh [resizable]="true"></th>
+          <th tuiTh [resizable]="true"></th>
+        </tr>
+      </thead>
+      
+      <tbody tuiTbody>
+        <tr *ngFor="let item of data" tuiTr>
+          <td *tuiCell="'name'"
+          tuiTd>
+          <div class="clicker" tabindex="1">{{item.name}}</div>
+            <div class="hiddendiv">
+              {{item.dates}}
+            </div>
+          </td>
+          <td *tuiCell="'have'"
+          tuiTd>
+            <div>{{item.have}}</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </tui-root>
+</body>
+</html>
